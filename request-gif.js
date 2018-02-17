@@ -13,7 +13,14 @@ $(document).ready(function() {
  * upon receiving a response from Giphy, updates the DOM to display the new GIF
  */
 function fetchAndDisplayGif(event) {
-    
+
+    var captchaInput = $("#captcha").val();
+
+    if (captchaInput == 5) {
+
+    $("#captcha").removeClass("invalid-field");
+    $(".error-message").text("");
+
     $('#loading').attr("hidden", false);
     $("#gif").attr("hidden", true);
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
@@ -56,11 +63,19 @@ function fetchAndDisplayGif(event) {
             $("#feedback").text("Sorry, could not load GIF. Try again!");
             setGifLoadedStatus(false);
         }
+    
     });
     
     // TODO
     // give the user a "Loading..." message while they wait
-    
+    }
+
+    else {
+        $('#gif').attr("src", "");
+        $("#captcha").addClass("invalid-field");
+        $(".error-message").text("No gifs for you");
+        event.preventDefault();
+    }
 }
 
 
