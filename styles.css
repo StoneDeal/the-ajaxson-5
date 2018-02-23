@@ -18,8 +18,8 @@ body {
     background-color: #ccccb3;
     text-align: center;
     margin: auto;
-    width: 40%;
-    padding: 10px;
+    width: 75%;
+    padding: 5%;
     
 }
 
@@ -30,6 +30,7 @@ h1 {
 }
 
 #div-one {
+    text-align: center;
     width: 100%;
     margin: auto;
     padding: 5%;
@@ -47,4 +48,8 @@ img {
     padding-top: 5%;
     min-width: 100%;
     max-width: 100%;
+}
+
+#form-gif-request {
+    
 }
